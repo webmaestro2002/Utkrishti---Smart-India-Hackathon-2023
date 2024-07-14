@@ -1,0 +1,46 @@
+/* Styles for Game Container */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* Styles for Cards */
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #007acc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card.flipped {
+    background-color: #fff;
+    color: #007acc;
+    pointer-events: none;
+}
+
+/* Styles for Reset Button */
+#reset-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #004f80;
+}

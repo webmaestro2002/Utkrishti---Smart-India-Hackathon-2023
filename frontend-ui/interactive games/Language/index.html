@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cognitive Retraining Program</title>
+    <style>
+      /* Add your CSS styles here */
+      /* Latest CSS Styles with Black Background, Blue Buttons, and Centered Content for Language Part */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #000; /* Black header background */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.exercise {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #007acc; /* Blue border */
+    border-radius: 5px;
+    background-color: rgba(0, 122, 204, 0.3); /* Semi-transparent blue background */
+}
+
+.question p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.answer {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007acc; /* Blue button background */
+    color: #fff; /* White button text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #005b9f; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+h1 {
+    font-size: 28px; /* Larger font size for the main title */
+    margin-top: 0; /* Remove default top margin */
+    padding: 10px 0; /* Add some padding for spacing */
+    background-color: #007acc; /* Blue background color */
+    display: inline-block; /* Place the title in a box */
+    border-radius: 5px; /* Rounded corners for the box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Language Analysis</h1>
+    </div>
+    <div id="container">
+      <p>Complete the following cognitive exercises to improve your skills:</p>
+
+      <!-- Exercise 1: Language Quiz -->
+      <!-- <div class="exercise">
+        <h3>Language Quiz</h3>
+        <p>Answer the following questions:</p>
+        <div class="quiz-question">
+          <label for="q1"
+            >What is the name of the season when leaves fall off trees?</label
+          >
+          <input type="text" id="q1" name="q1" />
+        </div>
+        <div class="quiz-question">
+          <label for="q2">How many continents are there?</label>
+          <input type="text" id="q2" name="q2" />
+        </div>
+        <div class="quiz-question">
+          <label for="q3"
+            >What is the name of the red vegetable that grows
+            underground?</label
+          >
+          <input type="text" id="q3" name="q3" />
+        </div>
+        <div class="quiz-question">
+          <label for="q3">What do you call a group of cows?</label>
+          <input type="text" id="q4" name="q4" />
+        </div>
+
+        <button onclick="checkLanguageQuiz()">Submit</button>
+      </div> -->
+
+    
+      <div class="exercise">
+        <h3>Word Association Game</h3>
+        <p>Provide a word that is associated with the following words:</p>
+        <div class="language-game">
+          <p>1. Apple</p>
+          <input
+            type="text"
+            id="association-answer1"
+            placeholder="Enter your answer"
+          />
+          <p>2. Bicycle</p>
+          <input
+            type="text"
+            id="association-answer2"
+            placeholder="Enter your answer"
+          />
+          <p>3. Ocean</p>
+          <input
+            type="text"
+            id="association-answer3"
+            placeholder="Enter your answer"
+          />
+          <button onclick="checkWordAssociation()">Check</button>
+        </div>
+      </div>
+
+      <!-- Exercise 12: Word Scramble Game -->
+      <div class="exercise">
+        <h3>Word Scramble Game</h3>
+        <p>Unscramble the following word:</p>
+        <div class="language-game">
+          <p id="scrambled-word">hnudaretf</p>
+          <input type="text" id="word-answer" placeholder="Enter your answer" />
+          <button onclick="checkWordScramble()">Check</button>
+        </div>
+      </div>
+   
+
+    <div class="exercise">
+        <h3>Rhyme Time</h3>
+        <p>Find words that rhyme with the following words:</p>
+        <div class="language-game">
+            <p>1. Cat</p>
+            <input type="text" id="rhyme-answer1" placeholder="Enter rhyming words (comma-separated)">
+            <p>2. Sun</p>
+            <input type="text" id="rhyme-answer2" placeholder="Enter rhyming words (comma-separated)">
+            <p>3. Dance</p>
+            <input type="text" id="rhyme-answer3" placeholder="Enter rhyming words (comma-separated)">
+            <button onclick="checkRhymeTime()">Check</button>
+        </div>
+    </div>
+  </div>
+
+    <script>
+      // Add your JavaScript code here to implement the exercises and their logic
+
+      // function checkLanguageQuiz() {
+      //   const q1Answer = document.getElementById("q1").value.toLowerCase();
+      //   const q2Answer = document.getElementById("q2").value.toLowerCase();
+      //   const q3Answer = document.getElementById("q3").value.toLowerCase();
+      //   const q4Answer = document.getElementById("q4").value.toLowerCase();
+
+      //   if (
+      //     q1Answer === "Autumn" &&
+      //     q2Answer === "7" &&
+      //     q3Answer === "Beetroot" &&
+      //     q4Answer === "Herd"
+      //   ) {
+      //     alert("Correct answers!");
+      //   } else {
+      //     alert("Incorrect answers. Try again.");
+      //   } // Add logic to check the language quiz answers
+      // }
+
+     
+
+      function checkWordAssociation() {
+        const associationAnswer1 = document
+          .getElementById("association-answer1")
+          .value.toLowerCase();
+        const associationAnswer2 = document
+          .getElementById("association-answer2")
+          .value.toLowerCase();
+        const associationAnswer3 = document
+          .getElementById("association-answer3")
+          .value.toLowerCase();
+
+        const correctAnswers = {
+          apple: "fruit",
+          bicycle: "vehicle",
+          ocean: "water",
+          // Add more word and associated word pairs as needed
+        };
+
+        let allCorrect = true;
+
+        // Check if all answers are correct
+        if (associationAnswer1 !== correctAnswers["apple"]) {
+          allCorrect = false;
+        }
+        if (associationAnswer2 !== correctAnswers["bicycle"]) {
+          allCorrect = false;
+        }
+        if (associationAnswer3 !== correctAnswers["ocean"]) {
+          allCorrect = false;
+        }
+
+        if (allCorrect) {
+          alert("All answers are correct!");
+        } else {
+          alert("One or more answers are incorrect. Try again.");
+        }
+      }
+
+      // Add an array of scrambled words and their correct answers
+      const wordScrambleData = [
+        { scrambled: "hnudaretf", answer: "thunderfan" },
+        // Add more word scramble data as needed
+      ];
+
+      let currentWordIndex = 0;
+
+      function shuffleWord(word) {
+        // This function shuffles the characters of a word
+        const shuffled = word
+          .split("")
+          .sort(function () {
+            return 0.5 - Math.random();
+          })
+          .join("");
+        return shuffled;
+      }
+
+      function loadWordScramble() {
+        const wordElement = document.getElementById("scrambled-word");
+        const wordAnswerInput = document.getElementById("word-answer");
+
+        if (currentWordIndex < wordScrambleData.length) {
+          const currentWordData = wordScrambleData[currentWordIndex];
+          const scrambledWord = currentWordData.scrambled;
+          const correctAnswer = currentWordData.answer;
+
+          wordElement.textContent = shuffleWord(scrambledWord);
+          wordAnswerInput.value = "";
+
+          // Store the correct answer as data attribute for later checking
+          wordAnswerInput.setAttribute("data-correct-answer", correctAnswer);
+        } else {
+          wordElement.textContent = "You've completed all word scrambles!";
+          wordAnswerInput.value = "";
+        }
+      }
+
+      function checkWordScramble() {
+        const wordAnswerInput = document.getElementById("word-answer");
+        const correctAnswer = wordAnswerInput
+          .getAttribute("data-correct-answer")
+          .toLowerCase();
+        const userAnswer = wordAnswerInput.value.toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          alert("Correct answer!");
+          currentWordIndex++;
+          loadWordScramble();
+        } else {
+          alert("Incorrect answer. Try again.");
+        }
+      }
+
+      // Call loadWordScramble to start the game
+      loadWordScramble();
+
+      function checkRhymeTime() {
+    const rhymeAnswer1 = document.getElementById("rhyme-answer1").value.toLowerCase().split(',').map(word => word.trim());
+    const rhymeAnswer2 = document.getElementById("rhyme-answer2").value.toLowerCase().split(',').map(word => word.trim());
+    const rhymeAnswer3 = document.getElementById("rhyme-answer3").value.toLowerCase().split(',').map(word => word.trim());
+
+    const correctAnswers = {
+        "cat": ["hat", "bat", "mat"],
+        "sun": ["fun", "run", "bun"],
+        "dance": ["chance", "stance", "advance"]
+        // Add more word and associated rhyming words as needed
+    };
+
+    let allCorrect = true;
+
+    // Check if all answers are correct
+    if (!arraysEqual(rhymeAnswer1, correctAnswers["cat"])) {
+        allCorrect = false;
+    }
+    if (!arraysEqual(rhymeAnswer2, correctAnswers["sun"])) {
+        allCorrect = false;
+    }
+    if (!arraysEqual(rhymeAnswer3, correctAnswers["dance"])) {
+        allCorrect = false;
+    }
+
+    if (allCorrect) {
+        alert("All answers are correct!");
+    } else {
+        alert("One or more answers are incorrect. Try again.");
+    }
+}
+
+// Helper function to check if two arrays are equal
+function arraysEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
+    }
+    return true;
+}
+
+
+    </script>
+  </body>
+</html>
